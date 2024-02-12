@@ -77,10 +77,10 @@ def get_dealer_reviews_from_cf(url, dealerId):
             print("review",review_doc)
             # Create a review object with values in `doc` object
             review_obj = DealerReview(dealership=review_doc["dealership"], name=review_doc["name"], purchase=review_doc["purchase"],
-                                   review=review_doc["review"], purchase_date="", car_make="",
-                                   car_model="",
-                                   car_year="", sentiment="", id=review_doc["id"])
-            review_obj.sentiment = analyze_review_sentiments(review_obj.review)
+                                   review=review_doc["review"], purchase_date="2020", car_make="Subaru",
+                                   car_model="Forester",
+                                   car_year="2020", sentiment="happy", id=review_doc["id"])
+            #review_obj.sentiment = analyze_review_sentiments(review_obj.review)
             results.append(review_obj)
 
     return results
